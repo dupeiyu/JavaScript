@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			var a = new Object();
+			a.name="teng";
+			a.age=16;
+			a.func = function(){console.log(123)};
+			
+			Object.prototype.sex = "female";
+		
+			for(let key in a ){
+			    console.log(key+':'+a[key]);
+			}
+			
+			Object的每个实例都具有下列属性和方法:
+			console.log( a.constructor===Object);
+			
+			console.log( a.hasOwnProperty("age"));
+			console.log( a.hasOwnProperty("sex"));
+			
+			console.log( Object.prototype.isPrototypeOf(a));
+			
+			console.log( a.propertyIsEnumerable("name"));
+			
+			console.log( a.toLocaleString());
+			console.log( a.toString());
+			console.log( a.toLocaleString()===a.toString());
+			
+			console.log( a.valueOf());
+			console.log(typeof a.valueOf());
+			
+		</script>
+	</body>
+</html>
