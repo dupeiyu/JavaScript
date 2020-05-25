@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			var number=[1,2,3,4,5,4,3,2,1]
+			// every
+			var everyResult=number.every(function(item,index,array){
+				return(item>2);
+			})
+			console.log(everyResult);
+			// some
+			var someResult=number.some(function(item,index,array){
+				return(item>2);
+			})
+			console.log(someResult);
+			// filter
+			var filterResult=number.filter(function(item,index,array){
+				return(item>2);
+			})
+			console.log(filterResult);
+			// map
+			var mapResult=number.map(function(item,index,array){
+				return (item>2);
+			})
+			console.log(mapResult);
+			
+			var mapResult=number.map(function(item,index,array){
+				return (item*2);
+			})
+			console.log(mapResult);
+			// forEach
+			var forResult=number.forEach(function(item,index,array){
+				array[index]=item*3;
+			})
+			console.log(number);
+		</script>
+	</body>
+</html>
