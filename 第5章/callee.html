@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			// 1. callee关键字的定义： 在函数内部使用， 代表当前函数的引用(名字)。
+
+			// 2. callee关键字的作用： 降低代码的耦合度。
+
+			// 3. 耦合度的定义： 一处代码的修改会导致其他代码也要发生改变(耦合度高) 在项目里边要开发低耦合度的代码(一处代码修改尽量少地引起其他代码的变化)。
+
+			function jiecheng(n) {
+
+				if (n == 1) {
+
+					return 1;
+
+				} else {
+
+					//return n * jiecheng(n-1);
+
+					//callee可以保证外部名称的变化，不会引起内部代码的修改，代码耦合度降低
+
+					return n * arguments.callee(n - 1);
+				}
+
+			}
+
+			//要把jiecheng名称换成其他的名字进行使用
+
+			var jc = jiecheng; //对象赋值，其为引用传递
+
+			jiecheng = null; //销毁jiecheng函数对象，后期不使用了
+
+			console.log(jc(4)); //输出24
+
+			var jd = jc;
+
+			jc = null;
+
+			console.log(jd(6)); //输出720
+		</script>
+	</body>
+</html>
