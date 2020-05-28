@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			// for-in是一种精准的迭代语句,可以用来枚举对象的属性
+			var a = new Object();
+			a.name="teng";
+			a.age=16;
+			a.func = function(){console.log(123)};
+			
+			Object.prototype.sex = "female";
+					
+			for(let key in a ){
+			    console.log(key+':'+a[key]);
+			}
+		</script>
+	</body>
+</html>
