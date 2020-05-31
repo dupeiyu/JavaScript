@@ -7,30 +7,35 @@
 	<body>
 		<script type="text/javascript">
 			// 每个函数都包含两个非继承而来的方法：call&apply都是在特定的作用域中调用函数,实际上等于设置函数体内this对象的值.
-			function sum(num1,num2){
+			function sum(num1, num2) {
 				return num1 + num2;
 			}
-			function sum1(num1,num2){
+
+			function sum1(num1, num2) {
 				// return sum.apply(this,arguments);
-				return sum(num1,num2);
+				return sum(num1, num2);
 			}
-			function sum2(num1,num2){
+
+			function sum2(num1, num2) {
 				// return sum.apply(this,[num1,num2]);
-				return sum.call(this,num1,num2);
+				return sum.call(this, num1, num2);
 			}
-			console.log(sum1(10,10));
-			console.log(sum2(10,10));
-			
-			window.color="red";
-			var o = {color:"blue"};
-			function saycolor(){
+			console.log(sum1(10, 10));
+			console.log(sum2(10, 10));
+
+			window.color = "red";
+			var o = {
+				color: "blue"
+			};
+
+			function saycolor() {
 				console.log(this.color);
 			}
 			saycolor();
 			saycolor.call(this);
 			saycolor.call(window);
 			saycolor.call(o);
-			
+
 			// 好处:对象与函数不需要有任何耦合关系.
 		</script>
 	</body>

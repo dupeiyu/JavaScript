@@ -6,9 +6,12 @@
 	</head>
 	<body>
 		<script type="text/javascript">
-			window.color="red";
-			var o = {color:"blue"};
-			function saycolor(){
+			window.color = "red";
+			var o = {
+				color: "blue"
+			};
+
+			function saycolor() {
 				console.log(this.color);
 			}
 			var objectsaycolor = saycolor.bind(o);
