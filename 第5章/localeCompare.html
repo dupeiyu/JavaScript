@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			//比较字符串在字母表中的位置  具体用法
+			var stringValue = "yellow";
+
+			function deermineOder(value) {
+				var result = stringValue.localeCompare(value);
+				if (result < 0) {
+					alert("The string 'yellow' comes before the string '" + value + "'.");
+				} else if (result > 0) {
+					alert("The string 'yellow' comes after the string '" + value + "'.");
+				} else {
+					alert("The string 'yellow' is equal to the string '" + value + "'.");
+				}
+			}
+			deermineOder("brick");
+		</script>
+	</body>
+</html>
